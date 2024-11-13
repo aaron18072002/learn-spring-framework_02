@@ -1,16 +1,18 @@
 package com.in28minutes.learn_spring_framework.games;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GameRunner {
+	@Autowired @Qualifier("SuperContraQualifier")
 	private GameConsole game;
 	
-	public GameRunner(@Qualifier("SuperContraQualifier")GameConsole game) {
+	public GameRunner(GameConsole game) {
 		this.game = game;
 	}
-	
+		
 	public void run() {
 		System.out.println(this.game.toString() + " started!");
 		
