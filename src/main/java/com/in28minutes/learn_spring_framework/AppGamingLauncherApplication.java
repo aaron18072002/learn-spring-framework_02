@@ -10,18 +10,18 @@ import com.in28minutes.learn_spring_framework.games.GameRunner;
 
 @Configuration
 @ComponentScan("com.in28minutes.learn_spring_framework.games")
-public class App03GamingBasicSpring {
+public class AppGamingLauncherApplication {
 //	@Bean
 //	public GameConsole pacmanGame() {
 //		GameConsole pacman = new PacmanGame();
 //		return pacman;
 //	}
 	
-	@Bean
-	public GameRunner gameRunner(GameConsole game) {
-		GameRunner gameRunner = new GameRunner(game);
-		return gameRunner;
-	}
+//	@Bean
+//	public GameRunner gameRunner(GameConsole game) {
+//		GameRunner gameRunner = new GameRunner(game);
+//		return gameRunner;
+//	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -29,7 +29,7 @@ public class App03GamingBasicSpring {
 		AnnotationConfigApplicationContext context = null;
 		try {			
 			context = new AnnotationConfigApplicationContext
-					(App03GamingBasicSpring.class);
+					(AppGamingLauncherApplication.class);
 			
 			var gameRunner = context.getBean(GameRunner.class);
 			gameRunner.run();
