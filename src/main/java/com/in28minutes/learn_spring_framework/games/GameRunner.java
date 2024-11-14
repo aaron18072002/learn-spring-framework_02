@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GameRunner {
-	@Autowired @Qualifier("SuperContraQualifier")
 	private GameConsole game;
 	
+	@Autowired
 	public GameRunner(GameConsole game) {
 		this.game = game;
 	}
